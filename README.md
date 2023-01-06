@@ -7,9 +7,9 @@ Aqui você vai encontrar os detalhes de como foi o desenvolvimento do projeto.
 ---
 # Descrição:
   Delivery de bebidas, sendo uma aplicação fullstack, construido com 3 tipos de acesso, sendo eles:
-  Administrador: Gerencia os conteúdos da plataforma, adiciona e remove novos vendedores.
-  Vendedor: tem acesso ao controle e gerenciamento de todas suas vendas, acesso a informações de contato do cliente e status dos pedidos.
-  Cliente: Acesso para realização de compras.
+ - Administrador: Gerencia os conteúdos da plataforma, adiciona e remove novos vendedores.
+ - Vendedor: tem acesso ao controle e gerenciamento de todas suas vendas, acesso a informações de contato do cliente e status dos pedidos.
+ - Cliente: Acesso para realização de compras.
   
 # Habilidades desenvolvidas
 ### BackEnd:
