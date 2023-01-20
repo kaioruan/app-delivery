@@ -16,7 +16,7 @@ Aqui você vai encontrar os detalhes de como foi o desenvolvimento do projeto.
  - Modelagem dados com **MySQL** através do **Sequelize**;
  - Criação e associação tabelas usando `models` do `sequelize`;
  - Construção de uma **API REST** com endpoints para consumir os models criados;
- - Desenvolvimento de um `CRUD` utilizando `ORM`;
+ - Desenvolvimento de um `CRUD` utilizando `ORM` ;
 
  ### FrontEnd:
   - Construção de um **FrontEnd** utilizando **React**;
