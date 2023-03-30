@@ -63,11 +63,11 @@ body {
 }
 
 .container {
-  display: grid;
-  height: 100vh;
-  justify-items: center;
-  margin: 0 auto;
-  width: 100vw;
+  align-items: center;
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .container-products {
@@ -188,12 +188,12 @@ img {
 }
 
 .login-content {
-  align-content: center;
-  align-items: center;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
+  background-color: white;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: auto;
 }
 
 .address-form {
@@ -212,12 +212,12 @@ img {
 }
 
 .register-container {
-  align-content: center;
-  align-items: center;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
+  background-color: white;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: auto;
 }
 
 .product-container {
@@ -234,16 +234,14 @@ img {
 }
 
 form {
-  width: 360px;
+  width: 340px;
 }
 
 .login-content .input-div {
   border-bottom: 2px solid #d9d9d9;
-  color: #02498b;
-  display: grid;
-  grid-template-columns: 7% 93%;
-  margin: 25px 0;
-  padding: 15px 0;
+  display: flex;
+  margin: 25px;
+  padding: 15px;
   position: relative;
 }
 

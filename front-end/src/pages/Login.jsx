@@ -97,7 +97,7 @@ function Login() {
   return (
     <section style={ css } className="container">
       <div className="login-content">
-        <h2 className="title">Fuguetão Brabo Delivery</h2>
+        <h2 className="title">Bebidas Delivery</h2>
         <form>
           <label htmlFor="email-input" className="input-div one">
             <input
