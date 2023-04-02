@@ -29,10 +29,11 @@ function Header() {
   };
 
   return (
+
     <div style={ css } className="product-container">
       <p
         data-testid="customer_products__element-navbar-user-full-name"
-        className="client-name"
+        className="title"
       >
         {nameUser}
       </p>
@@ -57,13 +58,13 @@ function Header() {
           type="button"
           data-testid="customer_products__element-navbar-link-logout"
           onClick={ logOut }
-          className="btn-exit"
+          className="btn-product"
         >
           Sair
         </button>
       </div>
-      <div />
     </div>
+
   );
 }
 

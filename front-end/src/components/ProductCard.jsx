@@ -90,37 +90,42 @@ function ProductCard({ product, setUpdateTotal }) {
           src={ productCard.url_image }
           alt={ productCard.name }
         />
-        <input
-          data-testid={ `customer_products__input-card-quantity-${productCard.id}` }
-          name={ productCard.name }
-          type="number"
-          value={ quantityState }
-          onChange={ handleChange }
-          className="input-quantity"
-        />
-        <div className="div-quantity">
-          <button
-            type="button"
-            disabled={ productCard.quantity === 0 }
-            data-testid={ `customer_products__button-card-rm-item-${productCard.id}` }
+        <div className="quantity">
+          <div className="div-quantity">
+            <button
+              type="button"
+              disabled={ productCard.quantity === 0 }
+              data-testid={ `customer_products__button-card-rm-item-${productCard.id}` }
+              name={ productCard.name }
+              value={ productCard.price }
+              onClick={ decrementar }
+              className="btn-dec"
+            >
+              -
+            </button>
+          </div>
+          <input
+            data-testid={ `customer_products__input-card-quantity-${productCard.id}` }
             name={ productCard.name }
-            value={ productCard.price }
-            onClick={ decrementar }
-            className="btn-dec"
-          >
-            -
-          </button>
-          <button
-            type="button"
-            data-testid={ `customer_products__button-card-add-item-${productCard.id}` }
-            name={ productCard.name }
-            value={ productCard.price }
-            onClick={ incrementar }
-            className="btn-inc"
-          >
-            +
-          </button>
+            type="number"
+            value={ quantityState }
+            onChange={ handleChange }
+            className="input-quantity"
+          />
+          <div className="div-quantity">
+            <button
+              type="button"
+              data-testid={ `customer_products__button-card-add-item-${productCard.id}` }
+              name={ productCard.name }
+              value={ productCard.price }
+              onClick={ incrementar }
+              className="btn-inc"
+            >
+              +
+            </button>
+          </div>
         </div>
+
       </div>
     </div>
   );
