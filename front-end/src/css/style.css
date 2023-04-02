@@ -27,7 +27,7 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  font-family: cursive;
+  font-family: Courier New , Courier , monospace;
   font-size: 1.2rem;
   justify-content: center;
   margin-bottom: 2px;
