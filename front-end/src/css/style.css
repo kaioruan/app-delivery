@@ -31,6 +31,7 @@ body {
   font-size: 1.2rem;
   justify-content: center;
   margin-bottom: 2px;
+  margin-top: 1rem;
   min-height: 50px;
   outline: none;
   text-transform: uppercase;
@@ -219,12 +220,7 @@ form {
 
 .quantity button {
   align-items: center;
-
-  /* background: none;
-  background-color: none; */
   background-color: #f7f7f7;
-
-  /* border: none; */
   border: 1px solid #ddd;
   border-radius: 3px;
   color: #333;
@@ -257,6 +253,102 @@ form {
   padding: 10px;
   text-align: center;
   width: 80px;
+}
+
+table {
+  background-color: #fff;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  margin-top: 1rem;
+  max-width: 70rem;
+  width: 100%;
+}
+
+table th, table td {
+  border-bottom: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.address-form {
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  gap: 4rem;
+  justify-content: center;
+  margin: auto;
+  width: 65%;
+}
+
+label input {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.address-form select {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.address-form select input {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn-remove {
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.btn-entregue {
+  background: green;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.table-all {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 65%;
+}
+
+.table-total {
+  color: #0a67be;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 1rem;
+
+  /* margin-bottom: 20px; */
 }
 
 .quantity button:hover {
@@ -314,6 +406,48 @@ form {
 
   .btn {
     margin: 0.5rem 0;
+  }
+
+  table {
+    max-width: none;
+    width: 100%;
+  }
+
+  table th, table td {
+    display: block;
+    text-align: center;
+  }
+
+  table td {
+    border-bottom: none;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+  }
+
+  table td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: -10px;
+    width: 100%;
+  }
+
+  table th:before {
+    content: normal;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 5px;
+    width: 30%;
+  }
+
+  .address-form {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
   }
 
 }

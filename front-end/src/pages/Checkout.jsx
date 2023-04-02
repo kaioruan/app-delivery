@@ -66,7 +66,6 @@ function Checkout() {
   const createNewOrderRedirectDetail = async () => {
     const getUser = JSON.parse(localStorage.getItem('user'));
     const getTotal = JSON.parse(localStorage.getItem('total'));
-    // const getIdSeller = dataSeller.fi((i) => i.name === dados.option);
     const newOrder = {
       userId: getUser.id,
       sellerId: Number(IdSeller),
@@ -163,7 +162,7 @@ function Checkout() {
                       data-testid={
                         `customer_checkout__element-order-table-remove-${index}`
                       }
-                      className="btn"
+                      className="btn btn-remove"
                     >
                       Remover
                     </button>
@@ -182,7 +181,7 @@ function Checkout() {
         </h2>
       </div>
       <h1 className="subtitle">Detalhes e Endereço para Entrega</h1>
-      <div className="address-content">
+      <div>
         <form className="address-form">
           <label htmlFor="1">
             P.Vendedora Responsável:
