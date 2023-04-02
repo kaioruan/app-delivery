@@ -122,16 +122,6 @@ function DetalheDePedidoCostumer() {
           {dataPedidoDetail && dataPedidoDetail[0].status}
         </p>
       </div>
-      <button
-        data-testid="customer_order_details__button-delivery-check"
-        type="button"
-        onClick={ handleUpdateStatus }
-        disabled={ dataPedidoDetail && (
-          dataPedidoDetail[0].status !== 'Em Trânsito') }
-        className="btn-entregue"
-      >
-        MARCAR COMO ENTREGUE
-      </button>
       <div className="table-all">
         <table>
           <thead>
@@ -194,6 +184,16 @@ function DetalheDePedidoCostumer() {
 
         </p>
       </div>
+      <button
+        data-testid="customer_order_details__button-delivery-check"
+        type="button"
+        onClick={ handleUpdateStatus }
+        disabled={ dataPedidoDetail && (
+          dataPedidoDetail[0].status !== 'Em Trânsito') }
+        className="btn-entregue"
+      >
+        MARCAR COMO ENTREGUE
+      </button>
     </div>
   );
 }

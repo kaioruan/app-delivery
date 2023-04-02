@@ -23,10 +23,13 @@ function CustomerCard({ id, saleDate, totalPrice, status }) {
   }, [status]);
 
   return (
-    <div className="item-card">
-      <p data-testid={ `customer_orders__element-order-id-${id}` } className="orderNum">
+    <div className="item order">
+      <span
+        data-testid={ `customer_orders__element-order-id-${id}` }
+        className="orderNum"
+      >
         {`Pedido 000${String(id)}`}
-      </p>
+      </span>
       <p
         data-testid={
           `customer_orders__element-delivery-status-${id}`

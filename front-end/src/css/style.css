@@ -142,8 +142,6 @@ form {
 
 .btn-product {
   background-image: linear-gradient(to right, #3432be, #07b3ca, #36454f);
-
-  /* background-size: 200%; */
   border: none;
   border-radius: 0.5rem;
   color: white;
@@ -153,8 +151,6 @@ form {
   height: 1.5rem;
   margin-top: 0.5rem;
   outline: none;
-
-  /* padding: 0.5rem 0.7rem; */
   text-transform: uppercase;
   transition: 0.5s;
   width: 100%;
@@ -162,7 +158,6 @@ form {
 
 .container-products {
   align-items: center;
-  border-style: solid;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -179,8 +174,6 @@ form {
   background-color: white;
   border-radius: 0.5rem;
   display: flex;
-
-  /* flex: 0 0 calc(33.3333% - 20px); */
   flex-direction: column;
   justify-content: center;
   margin: 1rem;
@@ -188,8 +181,6 @@ form {
   overflow: hidden;
   padding: 0.5rem;
   width: 12.9rem;
-
-  /* width: 100%; */
 }
 
 .item p {
@@ -327,6 +318,7 @@ label input {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
+  margin-top: 1rem;
   padding: 10px 20px;
   text-transform: uppercase;
   transition: background-color 0.2s ease;
@@ -347,8 +339,16 @@ label input {
   font-size: 20px;
   font-weight: bold;
   margin-top: 1rem;
+}
 
-  /* margin-bottom: 20px; */
+.order span {
+  color: black;
+  font-weight: bold;
+}
+
+.order p {
+  font-size: 20px;
+  padding: 1.5rem;
 }
 
 .quantity button:hover {
