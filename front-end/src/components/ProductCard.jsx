@@ -91,19 +91,18 @@ function ProductCard({ product, setUpdateTotal }) {
           alt={ productCard.name }
         />
         <div className="quantity">
-          <div className="div-quantity">
-            <button
-              type="button"
-              disabled={ productCard.quantity === 0 }
-              data-testid={ `customer_products__button-card-rm-item-${productCard.id}` }
-              name={ productCard.name }
-              value={ productCard.price }
-              onClick={ decrementar }
-              className="btn-dec"
-            >
-              -
-            </button>
-          </div>
+          <button
+            type="button"
+            disabled={ productCard.quantity === 0 }
+            data-testid={ `customer_products__button-card-rm-item-${productCard.id}` }
+            name={ productCard.name }
+            value={ productCard.price }
+            onClick={ decrementar }
+
+          >
+
+            -
+          </button>
           <input
             data-testid={ `customer_products__input-card-quantity-${productCard.id}` }
             name={ productCard.name }
@@ -112,18 +111,16 @@ function ProductCard({ product, setUpdateTotal }) {
             onChange={ handleChange }
             className="input-quantity"
           />
-          <div className="div-quantity">
-            <button
-              type="button"
-              data-testid={ `customer_products__button-card-add-item-${productCard.id}` }
-              name={ productCard.name }
-              value={ productCard.price }
-              onClick={ incrementar }
-              className="btn-inc"
-            >
-              +
-            </button>
-          </div>
+          <button
+            type="button"
+            data-testid={ `customer_products__button-card-add-item-${productCard.id}` }
+            name={ productCard.name }
+            value={ productCard.price }
+            onClick={ incrementar }
+          >
+
+            +
+          </button>
         </div>
 
       </div>

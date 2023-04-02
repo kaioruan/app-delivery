@@ -136,7 +136,7 @@ form {
 .btn-container {
   display: flex;
   flex-direction: column;
-  width: 7%;
+  width: 8rem;
 }
 
 .btn-product {
@@ -161,8 +161,7 @@ form {
 
 .container-products {
   align-items: center;
-
-  /* border-style: solid; */
+  border-style: solid;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -179,7 +178,8 @@ form {
   background-color: white;
   border-radius: 0.5rem;
   display: flex;
-  flex: 0 0 calc(33.3333% - 20px);
+
+  /* flex: 0 0 calc(33.3333% - 20px); */
   flex-direction: column;
   justify-content: center;
   margin: 1rem;
@@ -194,7 +194,6 @@ form {
 .item p {
   -moz-box-orient: vertical;
   color: rgb(153, 153, 153);
-  display: box;
   font-size: 12px;
   font-weight: 400;
   -webkit-line-clamp: 2;
@@ -218,6 +217,31 @@ form {
   margin: 0.5rem;
 }
 
+.quantity button {
+  align-items: center;
+
+  /* background: none;
+  background-color: none; */
+  background-color: #f7f7f7;
+
+  /* border: none; */
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  height: 30px;
+  justify-content: center;
+  line-height: 30px;
+  margin: 1rem;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  width: 30px;
+}
+
 .input-quantity {
   appearance: textfield ! important;
   appearance: none;
@@ -235,39 +259,13 @@ form {
   width: 80px;
 }
 
-.div-quantity {
-  align-items: center;
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  color: #333;
-  cursor: pointer;
-  display: flex;
-  font-size: 18px;
-  font-weight: bold;
-  height: 30px;
-  justify-content: center;
-  line-height: 30px;
-  margin: 1rem;
-  outline: none;
-  text-align: center;
-  width: 30px;
-}
-
-.div-quantity button {
-  background: none;
-  border: none;
-  color: blue;
-  padding: 0;
-}
-
-.div-quantity:hover {
+.quantity button:hover {
   background-color: #ddd;
   border-color: #aaa;
   color: #333;
 }
 
-.div-quantity:active {
+.quantity button:active {
   background-color: #ccc;
   border-color: #999;
   color: #333;
