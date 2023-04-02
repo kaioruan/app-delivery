@@ -58,6 +58,7 @@ function Produtos() {
         data-testid="customer_products__button-cart"
         onClick={ () => navigate('/customer/checkout') }
         className="btn-product"
+        id="btn-cart"
       >
         Ver Carrinho: R$
         <span data-testid="customer_products__checkout-bottom-value">
