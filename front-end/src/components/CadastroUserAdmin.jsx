@@ -39,9 +39,9 @@ function CadastroUserAdmin({ setUsers }) {
   };
 
   return (
-    <section>
+    <section className="admin-content">
       <div className="login-content">
-        <form>
+        <form className="form-admin">
           <label htmlFor="nome" className="input-div one">
             <input
               data-testid="admin_manage__input-name"

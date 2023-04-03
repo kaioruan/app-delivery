@@ -39,6 +39,24 @@ body {
   width: 100%;
 }
 
+.subtitle-users {
+  align-items: center;
+  background-image: linear-gradient(to right, #3432be, #08d0eb, #050505);
+  background-size: 200%;
+  border: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: Courier New , Courier , monospace;
+  font-size: 1.2rem;
+  justify-content: center;
+  margin-bottom: 2px;
+  min-height: 50px;
+  outline: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  width: 100%;
+}
 
 .container {
   align-items: center;
@@ -61,6 +79,11 @@ img {
   flex-direction: column;
   padding: 0.5rem;
   width: auto;
+}
+
+.admin-content {
+  display: flex;
+  justify-content: center;
 }
 
 .register-container {
@@ -319,6 +342,18 @@ label input {
   padding: 10px;
   width: 100%;
 }
+
+.form-admin select {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 3px;
+  font-family: Courier New , Courier , monospace;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
 
 .address-form select {
   background-color: #f2f2f2;

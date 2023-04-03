@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services';
-import Header from '../components/Header';
+import Header from '../components/HeaderAdmin';
 import CadastroUserAdmin from '../components/CadastroUserAdmin';
 import TableUsers from '../components/TableUsers';
 
@@ -45,63 +45,8 @@ function Gerenciamento() {
       <Header />
       <h1 className="subtitle">Cadastro</h1>
       <CadastroUserAdmin setUsers={ setUsers } />
-      <h1 className="subtitle">Lista de Usuários</h1>
+      <h1 className="subtitle-users">Lista de Usuários</h1>
       <TableUsers />
-      {/* <div className="table-all">
-        <table>
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Nome</th>
-              <th>Email</th>
-              <th>Tipo</th>
-              <th>Excluir</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user, index) => (
-              <tr key={ user.id }>
-                <td
-                  data-testid={ `admin_manage__element-user-table-item-number-${index}` }
-                >
-                  {(index + 1)}
-
-                </td>
-                <td
-                  data-testid={ `admin_manage__element-user-table-name-${index}` }
-                >
-                  {user.name}
-
-                </td>
-                <td
-                  data-testid={ `admin_manage__element-user-table-email-${index}` }
-                >
-                  {user.email}
-
-                </td>
-                <td
-                  data-testid={ `admin_manage__element-user-table-role-${index}` }
-                >
-                  {user.role === 'seller' ? 'P. Vendedora' : 'Cliente'}
-
-                </td>
-                <td>
-                  {' '}
-                  <button
-                    type="button"
-                    data-testid={ `admin_manage__element-user-table-remove-${index}` }
-                    id={ user.id }
-                    onClick={ deleteUser }
-                  >
-                    X
-                  </button>
-
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div> */}
     </main>
   );
 }
