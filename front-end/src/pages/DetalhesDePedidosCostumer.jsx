@@ -11,6 +11,7 @@ function DetalheDePedidoCostumer() {
   const [sellerName, setSellerName] = useState('');
   const [total, setTotal] = useState('');
   const [dataProducts, setDataproducts] = useState('');
+  const [status, setStatus] = useState(false);
   useEffect(() => {
     // validação para token ao acessar a page
     const getToken = JSON.parse(localStorage.getItem('user'));
@@ -58,9 +59,13 @@ function DetalheDePedidoCostumer() {
         const convertDateSeller = new Date(i.saleDate).toLocaleDateString('pt-BR');
         setDetaSeller(convertDateSeller);
         setDataproducts(i.products);
+        console.log(dataPedidoDetail[0].status);
+        if (dataPedidoDetail && dataPedidoDetail[0].status === 'Em Trânsito') {
+          setStatus(true);
+        }
       });
     }
-  }, [dataPedidoDetail]);
+  }, [dataPedidoDetail, status]);
 
   useEffect(() => {
     const sumUnitPrice = dataProducts && dataProducts.map((i) => {
@@ -85,6 +90,7 @@ function DetalheDePedidoCostumer() {
       const data = await api.requestData(`/customer/orders/${lastSegment}`);
       const seller = Object.values(data[0].sale);
       setDataPedidoDetails(seller);
+      setStatus(false);
     } catch (err) {
       console.error(err);
     }
@@ -184,16 +190,21 @@ function DetalheDePedidoCostumer() {
 
         </p>
       </div>
-      <button
-        data-testid="customer_order_details__button-delivery-check"
-        type="button"
-        onClick={ handleUpdateStatus }
-        disabled={ dataPedidoDetail && (
-          dataPedidoDetail[0].status !== 'Em Trânsito') }
-        className="btn-entregue"
-      >
-        MARCAR COMO ENTREGUE
-      </button>
+      {status && (
+
+        <button
+          data-testid="customer_order_details__button-delivery-check"
+          type="button"
+          onClick={ handleUpdateStatus }
+          disabled={ dataPedidoDetail && (
+            dataPedidoDetail[0].status !== 'Em Trânsito') }
+          className="btn-entregue"
+        >
+          MARCAR COMO ENTREGUE
+        </button>
+      )}
+
+      ,
     </div>
   );
 }

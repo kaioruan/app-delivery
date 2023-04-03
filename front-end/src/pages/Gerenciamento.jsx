@@ -9,7 +9,6 @@ function Gerenciamento() {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   console.log(users);
-  // const [newUser, setNewUser] = useState(false);
   const ROUTER_ADMIN = '/admin/manage';
   useEffect(() => {
     const getToken = JSON.parse(localStorage.getItem('user'));
@@ -20,13 +19,6 @@ function Gerenciamento() {
       navigate('/login');
     }
   }, [navigate]);
-
-  // const deleteUser = async ({ target }) => {
-  //   const { id } = target;
-  //   await api.requestDelete(`/admin/manage/${id}`);
-  //   const newListUser = users.filter((user) => user.id !== Number(id));
-  //   setUsers(newListUser);
-  // };
 
   useEffect(() => {
     const loginValidate = async () => {

@@ -12,6 +12,8 @@ function DetalheDePedidoSeller() {
   const [dateSeller, setDetaSeller] = useState('');
   const [total, setTotal] = useState('');
   const [dataProducts, setDataproducts] = useState('');
+  const [status, setStatus] = useState(false);
+  const [statusEntregue, setStatusEntregue] = useState(false);
 
   useEffect(() => {
     // validação para token ao acessar a page
@@ -43,6 +45,12 @@ function DetalheDePedidoSeller() {
 
         const seller = Object.values(data[0].seller);
         setDataPedido(seller);
+        if (data[0].seller[0].status === 'Pendente') {
+          setStatus(true);
+        }
+        if (data[0].seller[0].status === 'Preparando') {
+          setStatusEntregue(true);
+        }
       } catch (err) {
         console.error(err);
       }
@@ -86,6 +94,8 @@ function DetalheDePedidoSeller() {
 
       const seller = Object.values(data && data[0].seller);
       setDataPedido(seller);
+      setStatus(false);
+      setStatusEntregue(true);
     } catch (err) {
       console.error(err);
     }
@@ -105,6 +115,7 @@ function DetalheDePedidoSeller() {
       const data = await requestData(`/seller/orders/${lastSegment}`);
       const seller = Object.values(data && data[0].seller);
       setDataPedido(seller);
+      setStatusEntregue(false);
     } catch (err) {
       console.error(err);
     }
@@ -138,27 +149,33 @@ function DetalheDePedidoSeller() {
         >
           {dataPedido && dataPedido[0].status}
         </p>
-        <button
-          data-testid="seller_order_details__button-preparing-check"
-          type="button"
-          onClick={ updateStatusPreparando }
-          disabled={ dataPedido && (dataPedido[0]
-            .status !== 'Pendente') }
-          className="btn-entregue"
-        >
-          PREPARAR PEDIDO
-        </button>
-        <button
-          type="button"
-          data-testid="seller_order_details__button-dispatch-check"
-          onClick={ updateStatusSaiuParaEntrega }
-          disabled={
-            dataPedido && (dataPedido[0].status !== 'Preparando')
-          }
-          className="btn-entregue"
-        >
-          SAIU PARA ENTREGA
-        </button>
+        {status && (
+
+          <button
+            data-testid="seller_order_details__button-preparing-check"
+            type="button"
+            onClick={ updateStatusPreparando }
+            disabled={ dataPedido && (dataPedido[0]
+              .status !== 'Pendente') }
+            className="btn-preparar"
+          >
+            PREPARAR PEDIDO
+          </button>
+        )}
+        {statusEntregue && (
+
+          <button
+            type="button"
+            data-testid="seller_order_details__button-dispatch-check"
+            onClick={ updateStatusSaiuParaEntrega }
+            disabled={
+              dataPedido && (dataPedido[0].status !== 'Preparando')
+            }
+            className="btn-entregue"
+          >
+            SAIU PARA ENTREGA
+          </button>
+        )}
       </div>
       <div className="table-all">
         <table>

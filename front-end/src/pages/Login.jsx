@@ -22,7 +22,6 @@ function Login() {
         .requestLogin('/login', { ...input });
 
       const dataSeller = await api.requestData('/customer/seller');
-      console.log(dataSeller);
       api.setToken(token);
       setRoleData(role);
       localStorage.setItem('user', JSON.stringify({ token, role, name, email, id }));

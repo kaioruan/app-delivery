@@ -6,7 +6,6 @@ function CustomerCard({ id, saleDate, totalPrice, status }) {
   const [deliveryStatus, setDeliveryStatus] = useState('');
 
   useEffect(() => {
-    console.log('status: ', status);
     switch (status) {
     case 'Entregue':
       setDeliveryStatus('orderEntregue');

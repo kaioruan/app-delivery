@@ -26,7 +26,7 @@ function HeaderSeller() {
     <div className="product-container">
       <p
         data-testid="customer_products__element-navbar-user-full-name"
-        className="client-name"
+        className="title"
       >
         {nameUser}
       </p>
@@ -43,7 +43,7 @@ function HeaderSeller() {
           type="button"
           data-testid="customer_products__element-navbar-link-logout"
           onClick={ logOut }
-          className="btn-exit"
+          className="btn-product"
         >
           Sair
         </button>

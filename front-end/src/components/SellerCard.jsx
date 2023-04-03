@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import * as moment from 'moment';
 
 function SellerCard({
   id, saleDate, totalPrice, status, deliveryAddress, deliveryNumber }) {
   const [deliveryStatus, setDeliveryStatus] = useState('');
+  const formatDate = moment(saleDate).format('DD/MM/YYYY');
 
   useEffect(() => {
-    console.log('status: ', status);
     switch (status) {
     case 'Entregue':
       setDeliveryStatus('orderEntregue');
@@ -20,16 +21,16 @@ function SellerCard({
     default:
       break;
     }
-  }, [status]);
+  }, [status, saleDate]);
 
   return (
-    <div className="item-card">
-      <p
+    <div className="item-seller order">
+      <span
         data-testid={ `seller_orders__element-order-id-${id}` }
         className="orderNum"
       >
         {`Pedido ${String(id)}`}
-      </p>
+      </span>
       <p
         data-testid={ `seller_orders__element-delivery-status-${id}` }
         className={ deliveryStatus }
@@ -41,10 +42,10 @@ function SellerCard({
       </p>
       <div className="orderDetail">
         <p data-testid={ `seller_orders__element-order-date-${id}` }>
-          {saleDate}
+          {`Data do Pedido: ${formatDate}`}
         </p>
         <p data-testid={ `seller_orders__element-card-price-${id}` }>
-          {`R$ ${String(totalPrice).replace('.', ',')}`}
+          {`Valor: R$ ${String(totalPrice).replace('.', ',')}`}
         </p>
       </div>
     </div>

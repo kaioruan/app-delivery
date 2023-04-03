@@ -30,7 +30,7 @@ function Orders({ role }) {
               status={ order.status }
             />
           </Link>
-        )) : <p>Não existe nenhuma venda...</p>
+        )) : <p className="title">Não existe nenhuma venda...</p>
       }
     </div>
   );
