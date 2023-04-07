@@ -434,6 +434,69 @@ label input {
   padding: 1.5rem;
 }
 
+.manage {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 70vh;
+  width: 100%;
+}
+
+.list-product {
+  align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 50rem;
+}
+
+.list-product .input-div {
+  appearance: textfield ! important;
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  height: 35px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.list-product button {
+  margin-top: 2rem;
+}
+
+.product-image {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.input-price {
+  appearance: textfield ! important;
+  appearance: none;
+  appearance: none;
+  appearance: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input[ type = 'file' ] {
+  display: none;
+}
+
+.urlImage {
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+
 .quantity button:hover {
   background-color: #ddd;
   border-color: #aaa;

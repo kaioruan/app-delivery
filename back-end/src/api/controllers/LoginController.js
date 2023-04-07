@@ -14,6 +14,12 @@ const LoginController = {
     return res.status(200).json(true);
   },
 
+  validateAdmin: async (req, res) => {
+    const { email } = req.user;
+    const result = await LoginService.validateAdmin(email);
+    return res.status(200).json(result);
+  },
+
 };
 
 module.exports = LoginController;

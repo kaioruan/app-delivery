@@ -17,6 +17,11 @@ function HeaderAdmin() {
     return products;
   };
 
+  const redirectCreateProduct = () => {
+    const products = navigate('/admin/manage/create-product');
+    return products;
+  };
+
   return (
     <div className="product-container">
       <p
@@ -26,6 +31,14 @@ function HeaderAdmin() {
         {nameUser}
       </p>
       <div className="btn-container">
+        <button
+          type="button"
+          data-testid="customer_products__element-navbar-link-orders"
+          onClick={ redirectCreateProduct }
+          className="btn-product"
+        >
+          Criar Produto
+        </button>
         <button
           type="button"
           data-testid="customer_products__element-navbar-link-logout"

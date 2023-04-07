@@ -11,6 +11,7 @@ import Gerenciamento from './pages/Gerenciamento';
 import DetalhesPedidoCostumer from './pages/DetalhesDePedidosCostumer';
 import MeusPedidosSeller from './pages/MeusPedidosSeller';
 import DetalhesDePedidoSeller from './pages/DetalhesDePedidoSeller';
+import CreateProduct from './pages/CreateProduct';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/customer/orders/:id" element={ <DetalhesPedidoCostumer /> } />
         <Route exact path="/seller/orders" element={ <MeusPedidosSeller /> } />
         <Route exact path="/seller/orders/:id" element={ <DetalhesDePedidoSeller /> } />
+        <Route exact path="/admin/manage/create-product" element={ <CreateProduct /> } />
       </Routes>
     </DeliveryProvider>
   );
