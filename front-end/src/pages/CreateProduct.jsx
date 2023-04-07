@@ -12,7 +12,6 @@ function CreateProduct() {
   const [input, setInput] = useState({
     name: '',
     price: '',
-    urlImage: '',
     role: 'administrador',
   });
   console.log(users);
@@ -36,16 +35,19 @@ function CreateProduct() {
         ...input,
         [target.name]: target.value,
       });
-      console.log(input);
     }
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const data = await requestLogin('/admin/manage', { ...input });
+      const data = await api.requestListProduct(
+        '/admin/manage/create-product',
+        { ...input, urlImage: URL.createObjectURL(selectedImage) },
+      );
       setFailedToRegister(false);
       setUsers((prevState) => [...prevState, data]);
+      navigate('/admin/manage');
     } catch (error) {
       setFailedToRegister(true);
     }
@@ -71,15 +73,6 @@ function CreateProduct() {
     loginValidate();
   }, [navigate]);
 
-  // function handleImageChange(event) {
-  //   const reader = new FileReader();
-  //   reader.onload = () => {
-  //     const imageDataUrl = reader.result;
-  //     setInput({ ...input, urlImage: imageDataUrl });
-  //   };
-  //   reader.readAsDataURL(event.target.files[0]);
-  // }
-
   return (
     <div>
       <Header />
@@ -102,6 +95,7 @@ function CreateProduct() {
               type="text"
               placeholder="Descrição do Produto"
               onChange={ handleChange }
+              className="input-price"
             />
           </label>
           <label htmlFor="price" className="input-div one">
@@ -124,7 +118,6 @@ function CreateProduct() {
               type="file"
               name="urlImage"
               onChange={ (event) => {
-                console.log(event.target.files[0]);
                 setSelectedImage(event.target.files[0]);
               } }
             />
@@ -132,7 +125,7 @@ function CreateProduct() {
           <button
             data-testid="admin_manage__button-register"
             type="submit"
-            disabled={ !input.name || !input.price || !input.urlImage }
+            disabled={ !input.name || !input.price || !selectedImage }
             onClick={ handleSubmit }
             className="btn"
           >

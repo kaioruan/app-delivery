@@ -7,6 +7,7 @@ import {
   setToken,
   updateStatus,
   validLogin,
+  requestListProduct,
 } from './request';
 
 export default {
@@ -18,4 +19,5 @@ export default {
   setToken,
   updateStatus,
   validLogin,
+  requestListProduct,
 };

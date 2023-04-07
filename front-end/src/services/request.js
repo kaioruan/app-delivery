@@ -20,8 +20,11 @@ export const requestData = async (endpoint) => {
 
 export const requestAllData = async (endpoint) => {
   const { data } = await api.get(endpoint);
-  console.log('endpoint', endpoint);
-  console.log('data', data);
+  return data;
+};
+
+export const requestListProduct = async (endpoint, body) => {
+  const { data } = api.post(endpoint, body);
   return data;
 };
 
@@ -41,7 +44,6 @@ export const requestLogin = async (endpoint, body) => {
 };
 export const requestDelete = async (endpoint) => {
   const { data } = await api.delete(endpoint);
-  console.log(data);
   return data;
 };
 

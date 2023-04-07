@@ -59,7 +59,6 @@ function DetalheDePedidoCostumer() {
         const convertDateSeller = new Date(i.saleDate).toLocaleDateString('pt-BR');
         setDetaSeller(convertDateSeller);
         setDataproducts(i.products);
-        console.log(dataPedidoDetail[0].status);
         if (dataPedidoDetail && dataPedidoDetail[0].status === 'Em Trânsito') {
           setStatus(true);
         }

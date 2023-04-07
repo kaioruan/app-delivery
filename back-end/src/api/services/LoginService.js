@@ -28,7 +28,6 @@ const LoginServices = {
     const verifyEmail = await user.findOne({
       where: { email },
     });
-    console.log(verifyEmail);
     if (!verifyEmail) throw new Error(NOT_FOUND);
     return { verifyEmail };
   },
