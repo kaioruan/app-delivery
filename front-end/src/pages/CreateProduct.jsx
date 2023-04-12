@@ -8,7 +8,7 @@ function CreateProduct() {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [failedToRegister, setFailedToRegister] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [image, setSelectedImage] = useState('');
   const [input, setInput] = useState({
     name: '',
     price: '',
@@ -41,13 +41,19 @@ function CreateProduct() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const data = await api.requestListProduct(
-        '/admin/manage/create-product',
-        { ...input, urlImage: URL.createObjectURL(selectedImage) },
+      const formData = new FormData();
+      formData.append('image', image);
+      formData.append('name', input.name);
+      formData.append('price', input.price);
+      formData.append('role', input.role);
+
+      await api.requestListProduct(
+        '/admin/create-product',
+        formData,
       );
-      setFailedToRegister(false);
+      const data = await api.requestData(ROUTER_ADMIN);
       setUsers((prevState) => [...prevState, data]);
-      navigate('/admin/manage');
+      navigate('/admin/manage/products');
     } catch (error) {
       setFailedToRegister(true);
     }
@@ -79,10 +85,10 @@ function CreateProduct() {
       <h1 className="subtitle">Cadastrar Produto</h1>
       <div className="manage">
         <form className="list-product">
-          { selectedImage
+          { image
            && <div className="product-image">
              <img
-               src={ URL.createObjectURL(selectedImage) }
+               src={ URL.createObjectURL(image) }
                alt="imagem do produto"
              />
 
@@ -125,7 +131,7 @@ function CreateProduct() {
           <button
             data-testid="admin_manage__button-register"
             type="submit"
-            disabled={ !input.name || !input.price || !selectedImage }
+            disabled={ !input.name || !input.price || !image }
             onClick={ handleSubmit }
             className="btn"
           >
