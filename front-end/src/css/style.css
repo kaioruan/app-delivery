@@ -502,6 +502,12 @@ input[ type = 'file' ] {
   color: #333;
 }
 
+.remove button:hover {
+  background-color: red;
+  border-color: #aaa;
+  color: #333;
+}
+
 .quantity button:active {
   background-color: #ccc;
   border-color: #999;
