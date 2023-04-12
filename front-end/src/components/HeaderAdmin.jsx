@@ -34,6 +34,22 @@ function HeaderAdmin() {
         <button
           type="button"
           data-testid="customer_products__element-navbar-link-orders"
+          onClick={ () => navigate('/admin/manage') }
+          className="btn-product"
+        >
+          Usuários
+        </button>
+        <button
+          type="button"
+          data-testid="customer_products__element-navbar-link-orders"
+          onClick={ () => navigate('/admin/manage/products') }
+          className="btn-product"
+        >
+          Produtos
+        </button>
+        <button
+          type="button"
+          data-testid="customer_products__element-navbar-link-orders"
           onClick={ redirectCreateProduct }
           className="btn-product"
         >

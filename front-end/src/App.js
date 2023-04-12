@@ -6,7 +6,8 @@ import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
 import MeusPedidosCostumer from './pages/MeusPedidosCostumer';
-import Produtos from './pages/Produtos';
+import Products from './pages/Products';
+import ProductsAdmin from './pages/ProductsAdmin';
 import Gerenciamento from './pages/Gerenciamento';
 import DetalhesPedidoCostumer from './pages/DetalhesDePedidosCostumer';
 import MeusPedidosSeller from './pages/MeusPedidosSeller';
@@ -23,11 +24,12 @@ function App() {
         <Route exact path="/login" element={ <Login /> } />
         <Route exact path="/customer/orders" element={ <MeusPedidosCostumer /> } />
         <Route exact path="/customer/checkout" element={ <Checkout /> } />
-        <Route exact path="/customer/products" element={ <Produtos /> } />
+        <Route exact path="/customer/products" element={ <Products /> } />
         <Route exact path="/customer/orders/:id" element={ <DetalhesPedidoCostumer /> } />
         <Route exact path="/seller/orders" element={ <MeusPedidosSeller /> } />
         <Route exact path="/seller/orders/:id" element={ <DetalhesDePedidoSeller /> } />
         <Route exact path="/admin/manage/create-product" element={ <CreateProduct /> } />
+        <Route exact path="/admin/manage/products" element={ <ProductsAdmin /> } />
       </Routes>
     </DeliveryProvider>
   );
