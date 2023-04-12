@@ -9,10 +9,8 @@ const ProductsController = {
 
   postProduct: async (req, res) => {
     const filename = req.file.path;
-    console.log(filename);
     const url = filename.replace('public/', '');
     const imageUrl = `http://localhost:3001/images/${url}`;
-    console.log(imageUrl);
     const { name, price } = req.body;
     const result = await Products.postProduct(name, price, imageUrl);
     if (!result) {
