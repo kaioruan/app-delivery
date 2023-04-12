@@ -6,7 +6,6 @@ const RegisterController = {
     const { body } = req;
     const result = await Register.Register(body);
     if (result === null) { // se retornar nulo (se usuario ja existir)
-      // return res.status(409).json({ message: 'Usuario ja cadastrado' });
       throw new Error('409|Usuario ja cadastrado');
     }
     const userName = result.name;

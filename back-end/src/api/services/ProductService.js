@@ -8,12 +8,12 @@ const ProductService = {
     return result;
   },
 
-  postProduct: async (name, price, urlImage) => {
+  postProduct: async (name, price, imageUrl) => {
     const newProduct = await product.create({
       name,
       price,
       // eslint-disable-next-line camelcase
-      url_image: urlImage,
+      url_image: imageUrl,
     });
     return newProduct;
   },
