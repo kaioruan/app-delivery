@@ -17,6 +17,13 @@ const ProductService = {
     });
     return newProduct;
   },
+
+  deleteProduct: async (id) => {
+    const result = await product.destroy({
+      where: { id },
+    });
+    return result;
+  },
 };
 
 module.exports = ProductService;

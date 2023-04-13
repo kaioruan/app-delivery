@@ -13,5 +13,6 @@ RouterAdmin.delete('/admin/manage/:id', AdminController.deleteUser);
 RouterAdmin.post(ROUTER_ADMIN, AdminController.createUser);
 RouterAdmin.post('/admin/create-product', upload.single('image'), 
  ProductsController.postProduct);
+RouterAdmin.delete('/admin/manage/products/:id', ProductsController.deleteProduct);
 
 module.exports = RouterAdmin;

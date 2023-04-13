@@ -18,6 +18,15 @@ const ProductsController = {
     }
     return res.status(201).json('Product created successfully');
   },
+
+  deleteProduct: async (req, res) => {
+    const { id } = req.params;
+    const result = await Products.deleteProduct(id);
+    if (!result) {
+      return res.status(400).json({ message: 'Invalid entries. Try again.' });
+    }
+    return res.status(200).json('Product deleted successfully');
+  },
 };
 
 module.exports = ProductsController;
