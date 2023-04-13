@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import api from '../services';
 import ProductCard from '../components/ProductCardAdmin';
 import Header from '../components/HeaderAdmin';
+import { requestDelete } from '../services/request';
 
 function ProductsAdmin() {
   const navigate = useNavigate();
@@ -39,6 +41,20 @@ function ProductsAdmin() {
     loginValidate();
   }, []);
 
+  const handleDelete = async (event) => {
+    const { id } = event.target;
+    console.log(id);
+    await requestDelete(`/admin/manage/products/${id}`);
+    const data = await api.requestData('/customer/products');
+    setProducts(data);
+    Swal.fire({
+      title: 'Deletado!',
+      text: 'Produto foi removido com sucesso!',
+      icon: 'success',
+      confirmButtonText: 'OK',
+    });
+  };
+
   return (
     <section>
       <Header />
@@ -47,6 +63,7 @@ function ProductsAdmin() {
           <ProductCard
             key={ product.id }
             product={ product }
+            handleDelete={ handleDelete }
           />
         ))}
       </div>

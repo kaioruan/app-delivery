@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function ProductCard({ product }) {
+function ProductCard({ product, handleDelete }) {
   const [productCard] = useState(product);
-  console.log(productCard.url_image);
 
   return (
     <div>
@@ -29,11 +28,11 @@ function ProductCard({ product }) {
         <div className="quantity remove">
           <button
             type="button"
-            disabled={ productCard.quantity === 0 }
+            id={ productCard.id }
             data-testid={ `customer_products__button-card-rm-item-${productCard.id}` }
             name={ productCard.name }
             value={ productCard.price }
-
+            onClick={ handleDelete }
           >
 
             X
@@ -53,6 +52,7 @@ ProductCard.propTypes = {
     url_image: PropTypes.string,
     quantity: PropTypes.number,
   }).isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
 
 export default ProductCard;
