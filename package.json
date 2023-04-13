@@ -6,6 +6,10 @@
     "node": ">=16.0.0"
   },
   "scripts": {
+    "postinstall": "npm run install:apps",
+    "install:apps": "./apps_install.sh",
+    "dev:backend": "(cd back-end && npm run db:reset && npm run dev)",
+    "dev:frontend": "(cd front-end && npm start)",
     "pm2": "./node_modules/.bin/pm2",
     "jest": "./node_modules/.bin/jest",
     "start": "./scripts/prepare-for-test.sh",
