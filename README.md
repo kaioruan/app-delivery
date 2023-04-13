@@ -46,7 +46,7 @@ npm run postinstall
 
 - Para iniciar a aplicação Express do back-end utilize o comando: `npm run dev:backend` na raiz do projeto.
 
-- É necessário ter o `MySQL 5+` instalado no seu computador ou uma instância do mesmo rodando em Docker. Logo em seguida é necessário rodar o comando `db:reset` para subir o banco de dados e popular o mesmo. 
+- É necessário ter o `MySQL 5+` instalado no seu computador ou uma instância do mesmo rodando em Docker.
 
 ---
 
