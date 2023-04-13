@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { requestLogin } from '../services/request';
 
-function CadastroUserAdmin({ setUsers }) {
+function CadastroUserAdmin({ setUsersList }) {
   const [input, setInput] = useState({
     name: '',
     email: '',
@@ -32,7 +32,7 @@ function CadastroUserAdmin({ setUsers }) {
     try {
       const data = await requestLogin('/admin/manage', { ...input });
       setFailedToRegister(false);
-      setUsers((prevState) => [...prevState, data]);
+      setUsersList((prevState) => [...prevState, data]);
     } catch (error) {
       setFailedToRegister(true);
     }
@@ -84,8 +84,8 @@ function CadastroUserAdmin({ setUsers }) {
             name="role"
             data-testid="admin_manage__select-role"
           >
-            <option>seller</option>
-            <option>customer</option>
+            <option value="seller">Vendedor</option>
+            <option value="customer">Cliente</option>
           </select>
           <button
             data-testid="admin_manage__button-register"
@@ -117,7 +117,7 @@ function CadastroUserAdmin({ setUsers }) {
 }
 
 CadastroUserAdmin.propTypes = {
-  setUsers: PropTypes.func.isRequired,
+  setUsersList: PropTypes.func.isRequired,
 };
 
 export default CadastroUserAdmin;

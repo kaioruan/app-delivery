@@ -1,48 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+
+import PropTypes from 'prop-types';
 import api from '../services';
 
-function TableUsers() {
-  const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
-  // const [newUser, setNewUser] = useState(false);
-  const ROUTER_ADMIN = '/admin/manage';
-  useEffect(() => {
-    const getToken = JSON.parse(localStorage.getItem('user'));
-    const { token } = getToken;
-    const validToken = api.setToken(token);
-
-    if (validToken) {
-      navigate('/login');
-    }
-  }, [navigate]);
-
+function TableUsers({ usersList, setUsersList }) {
   const deleteUser = async ({ target }) => {
     const { id } = target;
     await api.requestDelete(`/admin/manage/${id}`);
-    const newListUser = users.filter((user) => user.id !== Number(id));
-    setUsers(newListUser);
+    const newListUser = usersList.filter((user) => user.id !== Number(id));
+    setUsersList(newListUser);
   };
-
-  useEffect(() => {
-    const loginValidate = async () => {
-      try {
-        const token = localStorage.getItem('token');
-        const validate = await api.requestLogin('/login/validate', { token });
-        if (!validate) {
-          localStorage.setItem('user', '');
-          navigate('/login');
-        }
-        const data = await api.requestData(ROUTER_ADMIN);
-
-        const result = data.filter((user) => user.role !== 'administrator');
-        setUsers(result);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    loginValidate();
-  }, [navigate]);
 
   return (
     <div className="table-all">
@@ -57,7 +24,7 @@ function TableUsers() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, index) => (
+          {usersList.map((user, index) => (
             <tr key={ user.id }>
               <td
                 data-testid={ `admin_manage__element-user-table-item-number-${index}` }
@@ -104,4 +71,8 @@ function TableUsers() {
   );
 }
 
+TableUsers.propTypes = {
+  usersList: PropTypes.arrayOf().isRequired,
+  setUsersList: PropTypes.func.isRequired,
+};
 export default TableUsers;

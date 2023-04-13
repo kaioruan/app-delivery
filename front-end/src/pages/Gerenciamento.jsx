@@ -7,8 +7,7 @@ import TableUsers from '../components/TableUsers';
 
 function Gerenciamento() {
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
-  console.log(users);
+  const [usersList, setUsersList] = useState([]);
   const ROUTER_ADMIN = '/admin/manage';
   useEffect(() => {
     const getToken = JSON.parse(localStorage.getItem('user'));
@@ -32,7 +31,7 @@ function Gerenciamento() {
         const data = await api.requestData(ROUTER_ADMIN);
 
         const result = data.filter((user) => user.role !== 'administrator');
-        setUsers(result);
+        setUsersList(result);
       } catch (err) {
         console.error(err);
       }
@@ -44,9 +43,9 @@ function Gerenciamento() {
     <main>
       <Header />
       <h1 className="subtitle">Cadastro</h1>
-      <CadastroUserAdmin setUsers={ setUsers } />
+      <CadastroUserAdmin setUsersList={ setUsersList } />
       <h1 className="subtitle-users">Lista de Usuários</h1>
-      <TableUsers />
+      <TableUsers usersList={ usersList } setUsersList={ setUsersList } />
     </main>
   );
 }
