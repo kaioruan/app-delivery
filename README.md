@@ -61,3 +61,8 @@ npm run postinstall
   - Porta do frontend: `3000`;
   - Porta do backend: `3001`;
   - Porta do banco de dados: `3306`.
+
+
+## Clique na imagem para rodar um video demonstrativo.
+
+[![Watch the video](image.png](delivery-bebidas-2023-04-13_12.50.20.mp4)
